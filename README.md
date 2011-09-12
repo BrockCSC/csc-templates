@@ -1,3 +1,6 @@
+CSC Templates
+=============
+
 This is a set of LaTeX macros for CSC propaganda print.
 Use the 'csc-poster' style to make posters.
 Use the 'csc-letterhead' style to write official looking letters.
@@ -5,13 +8,14 @@ Use the 'csc-letterhead' style to write official looking letters.
 	Included are two sample documents for you to follow,
   a brochure of the club, and the project's license (GNU GPL).
 
-HOW TO USE
+Getting Started
+---------------
+
+- Use the provided makefile to compile sources and produce output.
+    $ make
+
+- Use ImageMagick to convert images to .eps format (note that .pdf also works).
+    $ convert file.jpg file.eps
 
 - Use dvipdfm to produce PDF files directly from DVI files.
-E.g.   > dvipdfm csc-poster.dvi
- 
-- Use ImageMagick to convert images
-E.g.   > convert file.jpg file.eps
-
-- Use the makefile to produce output
-E.g.   > make
+    $ dvipdfm csc-poster.dvi
