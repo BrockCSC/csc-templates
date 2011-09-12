@@ -11,9 +11,11 @@ Included are two sample documents for you to follow, a brochure of the club, and
 Getting Started
 ---------------
 
+These instructions are for Linux.
+
 - Use the provided makefile to compile sources and produce output
   - `$ make`
-- Use ImageMagick to convert images to .eps format (note that .pdf also works).
+- Use ImageMagick to convert images to .eps format (note that .pdf also works)
   - `$ convert image.jpg image.eps`
-- Use dvipdfm to produce PDF files directly from DVI files.
+- Use dvipdfm to produce PDF files directly from DVI files
   - `$ dvipdfm csc-poster.dvi`
