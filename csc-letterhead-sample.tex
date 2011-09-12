@@ -1,0 +1,88 @@
+%% This is csc-letterhead-sample.tex, a sample CSC letter.
+%% Copyright (C) 2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+\documentclass{letter}
+\usepackage{csc-letterhead}
+
+% Your name.
+\name{Collin Price}
+% Your office, or title.
+\office{President de facto} % 'de facto' because neither the CSC or its executives are officially established
+% Your e-mail address.
+\email{\url{cp06vz@brocku.ca}}
+
+% To change the date from its default.
+%\date{\today}
+
+% To customise the signature block.
+%\signature{\dotfill \\ \fromname \\ \fromoffice}
+
+% To use a different letter style
+%\letterstyle{full}
+%\letterstyle{semi}
+%\letterstyle{modified}
+
+\begin{document}
+% You may have more than one letter per document.  Each letter is
+% enclosed in a "letter" environment.
+\begin{letter}{
+  Denis Dyack,\\
+  Silicon Knights\\
+  One St. Paul Street, Suite 800\\
+  St. Catharines, ON\\
+  L2R 7L2\\
+}
+
+% The optional subject line for formal letters.
+%\subject{Re: Alumni invitation for social networking event.}
+
+% The salutation.  Use a colon suffix for formal letters, and a comma
+% suffix for friendly ones.
+\opening{Dear Denis Dyack:} % Sample letter
+
+On behalf of the Computer Science Club (CSC), I would like to extend a formal invitation; 
+we would like you to be a guest speaker at the upcoming Video Game Seminar held by the CSC. 
+The theme of this seminar is "Intro to Xbox 360 games: Joing the XNA Creators Club."
+The seminar will be held at Brock University, MC J301, in the Computer Science Department, on December 5, 2010. 
+
+For your information, I will be leading the seminar.
+I will forward a complete draft of the program to you in a few weeks so that you can know what specific subjects
+will be covered by the other speakers.
+
+We expect attendance this year to be higher than it has ever been – approximately 30 students and 3 speakers.
+We would be pleased and honoured if you would be our closing speaker at the seminar. 
+
+Thank you very much for your time and attention, I do enjoy your work.
+
+% The closing.  This also creates a signature.
+\closing{Yours sincerely,}
+
+% Optional postscripts.
+\ps{P.S. Too Human was great.}
+\ps{P.P.S. No really.}
+
+% For carbon-copying other people.
+\cc{Vice president of the CSC,\\
+    Gord Dunkley,\\
+    Dave Hughes}
+
+% List your attachments.
+\encl{A copy of Too Human which I would like autographed.}
+
+\end{letter}
+\end{document}

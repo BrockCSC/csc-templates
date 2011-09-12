@@ -1,0 +1,98 @@
+%% This is csc-letterhead.sty, which is the LaTeX 2e package for 
+%% Computer Science Club letterheads.
+%% Copyright (C) 2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+%%
+%% Requirements: You must have tetex-extra installed on your system.
+%% This package should be used in conjunction with letter.cls and 
+%% letterhead.sty.
+%%
+%% If you wish to generate csclogo.pdf for the first time, you ought to
+%% run `pdflatex -shell-escape myfile.tex` to allow PDFTeX to execute shell
+%% commands.  This is only useful if you are invoking PDFLaTeX.
+%%
+%% Changelog:
+%%   Version 2.0
+%%   * Modified for use by the CSC of Brock University.
+%%   -- Dennis Ideler <di07ty@brocku.ca> Wed, 18 Aug 2010 22:33
+%%
+%%   Version 1.0
+%%   * Initial release.
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Sun, 19 Jan 2003 22:06:17 -0500
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{csc-letterhead}[2003/01/19 v1.0]
+
+%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%
+\RequirePackage{letterhead}
+\RequirePackage{graphics}
+\RequirePackage{url}
+\urlstyle{same}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DEFINE NEW SUBSTITUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\email}[1]{\def\fromemail{#1}}
+\newcommand*{\website}[1]{\def\websiteurl{#1}}
+\email{}
+\website{\url{http://www.corradocoia.com/clients/brockcsc/}}
+\location{500 Glenridge Ave., MC J330, St. Catharines, ON. L2S 3A1}
+\telephone{(905) 688-2627 x4130}
+
+\RequirePackage{ifpdf}
+\ifpdf
+  \RequirePackage{epstopdf}
+\fi
+
+% Calculate the width of the logo, and how much space is left over.
+\newsavebox{\csclogo}
+\sbox{\csclogo}{\resizebox{!}{3\baselineskip}{\includegraphics{csclogo}}}
+\newlength{\csclogowidth}
+\newlength{\notlogowidth}
+\settowidth{\csclogowidth}{\usebox{\csclogo}}
+\setlength{\notlogowidth}{\textwidth}
+\addtolength{\notlogowidth}{-\csclogowidth}
+
+%%%%%%%%%%%%%
+%% LETTERHEAD
+%%%%%%%%%%%%%
+\renewcommand{\letterhead}{%
+  \sffamily%
+  \parbox{\csclogowidth}{\usebox{\csclogo}}%
+  \parbox{\notlogowidth}{%
+    \mbox{} \hfill \fromname\\
+    \mbox{} \hfill \fromoffice\\
+    \mbox{} \hfill \fromemail
+  }%
+  \\%
+  \mbox{}\hrulefill%
+}
+
+%%%%%%%%%
+%% FOOTER
+%%%%%%%%%
+\renewcommand{\letterfoot}{%
+  \sffamily%
+  \centerline{\makebox[0.8\textwidth]{\hrulefill}}%
+  \fromlocation \hfill \telephonenum\\%
+  \centerline{\websiteurl}%
+}
+
+
+\endinput

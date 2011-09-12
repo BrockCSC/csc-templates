@@ -1,0 +1,8 @@
+# Logs, compiled source, auto-generated files, and past events. #
+#################################################################
+*.log
+*.aux
+*.pdf
+*.dvi
+*.ps
+events/

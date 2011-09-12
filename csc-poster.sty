@@ -1,0 +1,170 @@
+%% This is csc-poster.sty, which is the LaTeX 2e package for Computer Science 
+%% Club posters.
+%% Copyright (C) 2002,2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+%%
+%% This package is based on the original cscposter.sty which was written in
+%% LaTeX 2.09.  Use this package instead, because it is not ugly and happens 
+%% to work well.
+%%
+%% If you need to squeeze down the text on the posters, you should use \csccram
+%% and if you're really desperate use \cscreallycram.
+%%
+%% Requirements: You must have tetex-bin, tetex-extra and gs installed on your
+%% system.
+%%
+%% If you wish to generate csclogo.pdf for the first time, you ought to
+%% run `pdflatex -shell-escape myfile.tex` to allow PDFTeX to execute shell
+%% commands.  This is only useful if you are invoking PDFLaTeX.
+%%
+%% Changelog:
+%%   Version 2.0
+%%   * Modified for use by the CSC of Brock University.
+%%   -- Dennis Ideler <di07ty@brocku.ca> Wed, 18 Aug 2010 22:33
+%%
+%%   Version 1.5
+%%   * Increased the size of the Speaker byline
+%%   * Merged dtbartle's margin settings, minimizing border whitespace
+%%   -- Gaelan D'costa <gdcosta@csclub.uwaterloo.ca> Wed, 20 June 2007 16:27:33 -500
+%%
+%%   Version 1.4
+%%   * Fixed handling of empty parameters.
+%%   * Allowed \cscsubtitle to be empty.
+%%   * Removed the need to use \noindent.
+%%   * Deprecated some useless commands.
+%%   * Changed the \csc*skip sizes.
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Mon, 20 Jan 2003 20:14:41 -0500
+%%
+%%   Version 1.3
+%%   * Cleaned up function defintions.
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Sun, 19 Jan 2003 17:01:14 -0500
+%%
+%%   Version 1.2
+%%   * Use graphics.sty instead of psfig.sty.
+%%   * Renamed csclogo.ps to csclogo.eps.
+%%   * Included epstopdf to support PDFLaTeX.
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Thu, 07 Nov 2002 06:26:03 -0500
+%%
+%%   Version 1.1
+%%   * Changed to use \vfill for dynamic logo placement
+%%   * Included csclogo.ps directly in this file.
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Wed, 24 Sep 2002 12:20:03 -0400
+%%
+%%   Version 1.0
+%%   * Rewrote cscposter.sty
+%%   -- Simon Law <sfllaw@engmail.uwaterloo.ca> Wed, 11 Sep 2002 11:18:43 -0400
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{csc-poster}[2002/11/07 v1.2]
+
+%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%
+\RequirePackage{fullpage}
+  \addtolength{\topmargin}{0.5in}
+  \addtolength{\leftmargin}{-0.5in}
+  \addtolength{\rightmargin}{-0.5in}
+  \addtolength{\textheight}{1.3in}
+\RequirePackage{graphicx}
+\RequirePackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%
+%% PAGE LAYOUT
+%%%%%%%%%%%%%%
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%
+%% FONT COMMANDS
+%%%%%%%%%%%%%%%%
+\providecommand{\HUGE}{\@setfontsize\HUGE{35.83}{35.83}}
+\newcommand{\cscfamily}{\renewcommand{\rmdefault}{pnc}}
+\newcommand{\csctitlefont}{\cscfamily \HUGE \bf}
+\newcommand{\cscspeakerfont}{\cscfamily \HUGE \it}
+\newcommand{\csctimefont}{\cscfamily \LARGE \bf}
+\newcommand{\cscsubtitlefont}{\cscfamily \LARGE \rm}
+\newcommand{\cscbigsubtitlefont}{\cscfamily \Huge \rm}  %% DEPRECATED!
+\newcommand{\cscbodyfont}{\Large}
+%
+%% DEPRECATED!
+% Use one of these, before \begin{document} to squeeze posters on to one
+% page.
+\newcommand{\csccram}{\renewcommand{\cscbodyfont}{\large}}
+\newcommand{\cscreallycram}{\renewcommand{\cscbodyfont}{\normalsize}}
+
+%%%%%%%%%%%%%%%
+%% DEFINE SKIPS
+%%%%%%%%%%%%%%%
+\newcommand{\cscsmallskip}{\vspace{0.1in}}
+\newcommand{\cscmedskip}{\vspace{0.3in}}
+\newcommand{\cscbigskip}{\vspace{0.5in}}
+
+%%%%%%%%%%%%%%%%
+%% DEFINE WRITES
+%%%%%%%%%%%%%%%%
+\newcommand{\cschead}[2]{%
+  \begin{center}%
+    \csctitlefont #1%
+    \if\@empty#2\relax%
+    \else%
+      \\%
+      \cscspeakerfont%
+      by\\%
+      #2%
+    \fi%
+  \end{center}%
+  \cscbodyfont\par%
+  \cscmedskip\@afterindentfalse\@afterheading%
+}
+
+\newcommand{\cscfoot}[4]{%
+  \begin{center}%
+    \csctimefont #1\\%
+    #2\\%
+    #3\\%
+    \if\@empty#4\relax%
+    \else%
+      \cscmedskip%
+      #4\\%
+    \fi%
+    \cscbigskip%
+    \includegraphics{csclogo-nowords}%
+  \end{center}%
+}
+
+\newcommand{\cscsubtitle}[1]{%
+  \if\@empty#1\relax%
+  \else%
+    \centerline{\cscsubtitlefont #1}%
+    \cscmedskip\@afterindentfalse\@afterheading%
+  \fi%
+}
+
+%% DEPRECATED!
+\newcommand{\cscbigsubtitle}[1]{%
+  \if\@empty#1\relax%
+  \else%
+    \centerline{\cscbigsubtitlefont #1}%
+    \cscmedskip\@afterindentfalse\@afterheading%
+  \fi%
+}
+
+\RequirePackage{ifpdf}
+\ifpdf
+  \RequirePackage{epstopdf}
+\fi
+
+\endinput
