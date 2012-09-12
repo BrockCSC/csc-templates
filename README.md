@@ -6,7 +6,8 @@ This is a set of LaTeX macros for CSC propaganda print.
 + Use the 'csc-poster' style to make posters
 + Use the 'csc-letterhead' style to write official looking letters
 
-Included are two sample documents for you to follow, a brochure of the club, and the project's license (GNU GPL).
+Included are two sample documents (poster and letterhead), a brochure of the
+club, and the project's license (GNU GPL).
 
 Getting Started
 ---------------
@@ -19,3 +20,9 @@ These instructions are for Linux.
   - `$ convert image.jpg image.eps`
 - Use dvipdfm to produce PDF files directly from DVI files
   - `$ dvipdfm csc-poster.dvi`
+
+Credit
+------
+
+These templates are derived from open-licensed templates by
+the Computer Science Club of the University of Waterloo.
