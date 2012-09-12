@@ -12,8 +12,13 @@ pdf: $(PDF)
 
 all: ps pdf
 
+# Cleans all output.
 clean:
-	rm -f $(DVI) $(PS) $(PDF) *.aux *.log
+	-rm -f $(DVI) $(PS) $(PDF) *.aux *.log
+
+# Cleans only the junk output.
+clean-junk:
+	-rm -f *.aux *.log past-events/*.aux past-events/*.log
 
 %.dvi: %.tex
 	latex $<
