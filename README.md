@@ -20,6 +20,8 @@ These instructions are for Linux.
   - `$ convert image.jpg image.eps`
 - Use dvipdfm to produce PDF files directly from DVI files
   - `$ dvipdfm csc-poster.dvi`
+- Use ps2pdf to produce PDF files directly from PS files
+  - `$ ps2pdf csc-poster.ps`
 
 Credit
 ------
