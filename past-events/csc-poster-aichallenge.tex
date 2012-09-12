@@ -1,0 +1,51 @@
+%% This is csc-poster-sample, a sample CSC poster
+%% Copyright (C) 2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+\documentclass{article}
+\usepackage{csc-poster}
+
+\begin{document}
+
+%% TITLE
+% This command lays out the top of the document.
+% The first parameter is the title.
+% The second parameter is the speaker.  This parameter may be empty.
+\cschead{Google AI Challenge}{Stephen Hyde}
+
+%% SUBTITLE
+% This command prints the sub-title and is completely optional.
+\cscsubtitle{A talk about Artificial Intelligence for the game of Planet Wars} % or, Creating a computer program to play Planet Wars
+
+The Google AI Challenge is an annual online competition where anyone can participate.
+It's organized by the University of Waterloo and sponsored by Google.\\
+\\
+Last year the challenge was to create a competitive bot to defeat other bots in Tron.
+This year participants have to create a bot to play Planet Wars - a popular turn based strategy game inspired by Galcon.\\
+\\
+Stephen Hyde will talk about the competition and his approach. His bot is currently ranked in the top 16 percent.\\
+Attendees will have the opportunity to learn how to implement their own basic bot and submit it before the submission deadline.\\
+
+%% FOOTER
+% The first through third arguments tell us the date and time.
+% The last argument is a pithy saying.  It may be empty.
+% Following the footer, the CSC logo is printed.
+\cscfoot{Monday, November 22}{5:00-6:00 PM}{Breakout Room (MCJ328)}{}
+\begin{center}
+\includegraphics[scale=0.3]{google.eps}
+\end{center}
+\end{document}

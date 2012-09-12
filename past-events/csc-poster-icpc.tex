@@ -1,0 +1,86 @@
+%% This is csc-poster-sample, a sample CSC poster
+%% Copyright (C) 2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+\documentclass{article}
+\usepackage{csc-poster}
+\usepackage{url}
+%\renewcommand{\familydefault}{\sfdefault} %sffamily
+
+\begin{document}
+
+%% TITLE
+% This command lays out the top of the document.
+% The first parameter is the title.
+% The second parameter is the speaker. This parameter may be empty.
+\cschead{ACM-ICPC Tryouts}{}
+
+%% SUBTITLE
+% This command prints the sub-title and is completely optional.
+%\cscsubtitle{International Collegiate Programming Contest}
+
+We invite you to tryout for a spot on the Brock ACM-ICPC team!\\
+\\
+The ICPC fosters creativity and teamwork in building new software programs,
+and enables students to test their ability to perform under pressure.
+It is the oldest, largest, and most prestigious programming contest in the world.\\
+\\
+% Reconsider including this paragraph
+%The contest pits teams of three university students against eight or more
+%complex, real-world problems with a grueling five-hour deadline. Huddled around
+%a single computer, competitors race against the clock in a battle of logic,
+%strategy and mental endurance. Teammates collaborate to rank the difficulty of
+%the problems, deduce the requirements, design test cases, and write programs
+%that solve the problems under the intense scrutiny of expert judges. The team
+%that solves the most problems in the fewest attempts in the least cumulative
+%time is declared the winner. 
+The annual event is comprised of several levels of competition:\\
+\textbf{local contests}, \textbf{regional contests}, and \textbf{world finals}.\\
+\\
+%\begin{description}
+%  \item[Local Contests] \hfill \\
+%    Universities choose teams or hold local contests to select one or more teams
+%    to represent them at the next level of competition.
+%  \item[Regional Contests] \hfill \\ % November 3, 2012, U of Windsor
+%    Universities send their teams to compete against other universities in their
+%    region. Brock participates in the East Central North America Regionals.
+%  \item[World Finals] \hfill \\ % June 30 - July 4, 2013, Saint Petersburg, Russia
+%    World finalist teams will compete for awards, prizes and bragging rights.
+%\end{description}
+%\noindent
+Programming language options are \emph{C}, \emph{C++}, and \emph{Java}.\\
+Programming experience is strongly recommended but not required.\\
+\\
+Hardcopy reference materials are allowed (anything on paper).\\
+Digital references are \emph{not} allowed (internet, physical calculators, ebooks, etc.)\\
+\\
+For more information about the ICPC, visit \url{http://cm.baylor.edu}\\
+For practice problems, visit \url{http://uva.onlinejudge.org}
+
+%% FOOTER
+% The first through third arguments tell us the date and time.
+% The last argument is a pithy saying.  It may be empty.
+% Following the footer, the CSC logo is printed.
+\cscfoot{Local Contest}{Friday, 21 September @ 5:00 - 8:00 PM}{MCD205, Brock University}{Questions? Email \url{csc@cosc.brocku.ca}}
+
+% Make sure to comment out the csclogonowords image in csc-poster.sty, line 144.
+\vspace{-15mm}
+\begin{center}
+\includegraphics[scale=0.6]{icpc_logo.eps}
+\end{center}
+
+\end{document}

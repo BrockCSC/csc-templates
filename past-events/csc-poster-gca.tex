@@ -1,0 +1,51 @@
+%% This is csc-poster-sample, a sample CSC poster
+%% Copyright (C) 2003  Computer Science Club of the University of Waterloo
+%% Copyright (C) 2010  Computer Science Club of Brock University
+%%
+%% This program is free software; you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation; either version 2 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program; if not, write to the Free Software
+%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+\documentclass{article}
+\usepackage{csc-poster}
+
+\begin{document}
+
+%% TITLE
+% This command lays out the top of the document.
+% The first parameter is the title.
+% The second parameter is the speaker.  This parameter may be empty.
+\cschead{The Great Canadian Appathon}{}
+
+%% SUBTITLE
+% This command prints the sub-title and is completely optional.
+\cscsubtitle{GreatCanadianAppathon.com}
+
+The Great Canadian Appathon is a chance for post-secondary students across Canada
+to showcase their skills in developing great games. Students can get together in
+teams of up to 4 people to hack their game together for 48 hours.\\
+\\
+The event is presented by XMG Studio and the National post.
+The Prizes are being sponsored by TELUS and the finale event is being sponsored by KPMG.\\
+\\
+There are over \$45,000 in prizes, so get your teams together to KICK SOME CANADIAN APPS!
+
+%% FOOTER
+% The first through third arguments tell us the date and time.
+% The last argument is a pithy saying.  It may be empty.
+% Following the footer, the CSC logo is printed.
+\cscfoot{March 11th - 13th}{Begins at 5:00 pm on March 11th.}{Remote location or University of Waterloo}{}
+\begin{center}
+\includegraphics[scale=0.52]{gca.eps}
+\end{center}
+\end{document}
